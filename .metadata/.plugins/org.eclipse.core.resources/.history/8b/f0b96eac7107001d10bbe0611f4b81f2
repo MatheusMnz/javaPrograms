@@ -1,0 +1,36 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		//Declarar o locale antes da declaração do Scanner
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		//Lendo String
+		String x;
+		x = sc.next();
+		System.out.println("Você digitou: " + x);
+		
+		//Lendo Inteiro
+		int num;
+		num = sc.nextInt();
+		System.out.println("Você inseriu: " + num);
+		
+		//Lendo Float
+		double number;
+		//Considerar o separador de decimais como ponto ou vírgula
+		number = sc.nextDouble();
+		System.out.println("Você inseriu: " + number);
+		
+		//Lendo um Caracter
+		char ch;
+		//sc.next() Lê na forma de String e charAt(0) pega o primeiro caracter da String
+		ch = sc.next().charAt(2);
+		System.out.println("Você digitou: " + ch);
+		
+		sc.close();
+	}
+
+}

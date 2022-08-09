@@ -1,0 +1,21 @@
+import java.util.Scanner;
+import java.util.Locale;
+public class Main {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		float largura = sc.nextDouble();
+		float comprimento = sc.nextDouble();
+		float metroquadrado = sc.nextDouble();
+		
+		float area = largura * comprimento;
+		float preco = area * metroquadrado;
+		
+		System.out.printf("Area: %.2f e Preço: %.2f",area, preco);
+		
+		sc.close();
+	}
+
+}

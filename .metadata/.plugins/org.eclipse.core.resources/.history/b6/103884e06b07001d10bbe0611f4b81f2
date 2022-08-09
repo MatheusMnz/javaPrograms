@@ -1,0 +1,19 @@
+//Importando a classe
+import java.util.Locale;
+
+public class Main {
+
+	public static void main(String[] args) {
+		System.out.println("Olá mundo");
+		double value = 10.37373;
+		System.out.println(value);
+		System.out.printf("%.2f\n", value);
+		//Setando o meu Idioma para Inglês parar trocar a virgula por ponto
+		Locale.setDefault(Locale.US);
+		System.out.printf("%.2f\n", value);
+		//Concatenando
+		System.out.println("Result = " + value + "!");
+		
+	}
+
+}

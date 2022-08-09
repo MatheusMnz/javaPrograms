@@ -1,0 +1,74 @@
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Program {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Lines: ");
+		int m = sc.nextInt();
+		System.out.println("Columns: ");
+		int n = sc.nextInt();
+		
+		int[][] mtr = new int[m][n];
+		System.out.println("Insert Values: ");
+		System.out.println(mtr.length);
+		System.out.println(mtr[0].length);
+		
+		//Fill Matrix
+		for(int i=0; i<mtr.length;i++) {
+			for(int j=0; j < mtr[i].length; j++) {
+				mtr[i][j] = sc.nextInt();
+			}
+		}
+		
+		//Value in matrix
+		System.out.print("Number in Matrix: ");
+		int x = sc.nextInt();
+		
+		
+		for(int i=0; i<mtr.length;i++) {
+			for(int j=0; j < mtr[i].length; j++) {
+				if(mtr[i][j] == x) {
+					//Start
+					if(i==0) {
+						System.out.print(mtr[i+1][j]);
+						if(j>0)
+							System.out.print(mtr[i][j-1]);
+						if(j>0 && j<mtr[i].length)
+							System.out.print(mtr[i][j+1]);
+					}
+					
+					//Mid
+					if(i>0 && i<mtr.length) {
+						System.out.print(mtr[i-1][j]);
+						System.out.print(mtr[i+1][j]);
+						if(j>0)
+							System.out.print(mtr[i][j-1]);
+						if(j>0 && j<mtr[i].length)
+							System.out.print(mtr[i][j+1]);
+					}
+					
+					//End
+					if(i==mtr.length) {
+						System.out.println(mtr[i-1][j]);
+						if(j>0)
+							System.out.print(mtr[i][j-1]);
+						if(j>0 && j<mtr[i].length)
+							System.out.print(mtr[i][j+1]);
+					}
+
+				}
+			}
+		}
+		
+		
+		
+		sc.close();
+	}
+
+}
